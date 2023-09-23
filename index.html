@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loginForm</title>
+
+    <style>
+        body {
+background-color: #758587;
+}
+#loginForm {
+  background-color: rgb(208, 202, 202);
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+   position:fixed;
+   top:20%;
+   left:30%;
+   width:500px;
+
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+  border: 1px solid rgb(211, 57, 175);
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button {
+  background-color: #e817b0;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  
+  
+}
+
+button:hover {
+  background-color: #8b2e78;
+}
+
+#loginMessage {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 30px;
+  color: cyan;
+}
+
+    </style>
+</head>
+
+<form id="loginForm"  >
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br><br>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+  
+  <button type="button" onclick="verifyuser()" >Login</button>
+</form>
+
+<p id="loginMessage"></p>
+
+<script>
+    function checkusercred(username, password) {
+  if (username === "Bond" && password === "007") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function verifyuser() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  
+  if (checkusercred(username, password)) {
+    document.getElementById("loginMessage").innerHTML = "Correct, Loggin you in...";
+  } else {
+    document.getElementById("loginMessage").innerHTML = "Incorrect username or password.";
+  }
+}
+
+</script>
+<body>
+    
+</body>
+</html>
